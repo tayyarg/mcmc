@@ -1,15 +1,17 @@
-import tkinter
 import numpy as np
 import pandas as pd
 import scipy as sp
-
+from scipy.stats import norm
 
 import matplotlib
 import matplotlib.pyplot as plt
+
+# Asagidaki uc satir sadece kodlar uzakta headless bir makinede (veya WSL'de) calistiginda ancak plot'lari local'de gormek istedigimizde gerekli.
+# TkAgg backend'i tinker kütüphanesine ihtiyac duyuyor. Local bilgisayarda da Xserver calisiyor olmali (Plot Windows'ta gösterilecekse VcXsrv kurulabilir).  
+import tkinter
 matplotlib.use('TkAgg')
 plt.switch_backend('TkAgg')
 
-from scipy.stats import norm
 
 np.random.seed(225)
 
