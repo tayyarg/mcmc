@@ -96,5 +96,15 @@ sons = sonsal_analitik_hesapla(gozlem, x, 0, 1)
 ax.plot(x, sons, 'g', label='analitik sonsal')
 _ = ax.set(xlabel='mu', ylabel='guvenilirlik (inanc)');
 ax.legend()
+plt.show()
 
+plt.show()
+
+#maksimum oto-korelasyon zamansal gecikme sayisi
+maks_zmnslgecikme = 30
+plt.acorr(sonsal, detrend=plt.mlab.detrend_mean, maxlags=maks_zmnslgecikme)
+plt.xlim(0, maks_zmnslgecikme)
+plt.xlabel('zamansal gecikme')
+plt.ylabel('oto-korelasyon')
+plt.title('analitik sonsal dagilim oto-korelasyon')
 plt.show()
